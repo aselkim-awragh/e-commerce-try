@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-export const connectDB = async () => {
+const connectDB = async () => {
   try {
     const connection = await mongoose.connect(process.env.MONGO_URI, {
       dbName: "ecommerce-test",
@@ -9,3 +9,5 @@ export const connectDB = async () => {
     console.error(`Error : ${error.message}`);
   }
 };
+
+module.exports = connectDB;

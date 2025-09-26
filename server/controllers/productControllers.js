@@ -1,3 +1,5 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const Product = require("../models/Product");
 export const getProducts = async (req, res) => {
   try {

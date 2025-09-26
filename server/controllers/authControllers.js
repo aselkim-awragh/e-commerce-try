@@ -1,3 +1,5 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const User = require("../models/User");
 const tokenJwt = require("../middlewares/jwt");
 export const register = async (req, res) => {

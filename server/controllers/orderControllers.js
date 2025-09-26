@@ -1,3 +1,5 @@
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const Order = require("../models/Order");
 export const getOrders = async (req, res) => {
   /* Recuperer TOUS LES TICKETS DE CAISSE de l'utilisateur

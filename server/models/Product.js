@@ -42,7 +42,7 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-productSchema.mehtods.updateStock = function (quantity) {
+productSchema.methods.updateStock = function (quantity) {
   this.stock += quantity;
   return this.save();
 };
