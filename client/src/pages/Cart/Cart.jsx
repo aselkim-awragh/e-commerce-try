@@ -27,12 +27,16 @@ function Cart() {
   }, []);
 
   return (
-    <div className="cart-page">
-      <h1 className="cart-title">Your cart</h1>
-      <div className="cart-content">
-        <CartList cart={cart} />
-      </div>
-    </div>
+    <>
+      {cart && (
+        <div className="cart-page">
+          <h1 className="cart-title">Your cart</h1>
+          <div className="cart-content">
+            <CartList cart={cart.items} />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

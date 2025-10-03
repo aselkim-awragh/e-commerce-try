@@ -1,9 +1,11 @@
 import CartItem from "./CartItem";
 function CartList({ cart }) {
+  cart.map((item) => {
+    console.log(item);
+  });
   return (
     <div className="cart-list">
-      {cart &&
-        cart.items.map((item, index) => <CartItem itme={item} key={index} />)}
+      {cart && cart.map((item, index) => <CartItem item={item} key={index} />)}
     </div>
   );
 }
