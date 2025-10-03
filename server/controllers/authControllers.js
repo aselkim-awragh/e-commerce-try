@@ -3,8 +3,11 @@ const require = createRequire(import.meta.url);
 const User = require("../models/User");
 const tokenJwt = require("../middlewares/jwt");
 export const register = async (req, res) => {
+  console.log("Executing the server register");
   try {
+    console.log(req.body);
     const { name, email, password } = req.body;
+
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({
@@ -12,12 +15,14 @@ export const register = async (req, res) => {
         message: "User already exists with this email",
       });
     }
-    const user = await user.Create({
+    const user = await User.create({
       name,
       email,
       password,
     });
+    console.log("User created");
     const token = tokenJwt.generateToken(user._id);
+    console.log(token);
     res.status(201).json({
       success: true,
       message: "User registered successfuly",
