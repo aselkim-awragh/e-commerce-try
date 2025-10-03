@@ -13,18 +13,15 @@ const Shop = () => {
   const getData = async () => {
     try {
       //Get products
-      const response = await fetch("http://localhost:8080/api/v1/products", {
+      const response = await fetch("/api/v1/products", {
         method: "GET",
       });
       const data = await response.json();
       setLocaldata(() => data);
       //Get categories
-      const catResponse = await fetch(
-        "http://localhost:8080/api/v1/products/categories",
-        {
-          method: "GET",
-        }
-      );
+      const catResponse = await fetch("/api/v1/products/categories", {
+        method: "GET",
+      });
       const catData = await catResponse.json();
       console.log(catData);
       setCategories(() => catData.categories);

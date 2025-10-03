@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 const ProductItem = ({ product }) => {
   const token = localStorage.getItem("user_token");
   const addToCart = async () => {
-    const response = await fetch("http://localhost:8080/api/v1/cart/add", {
+    const response = await fetch("/api/v1/cart/add", {
       method: "POST",
       headers: {
         Authorization: `Bearer : ${token}`,

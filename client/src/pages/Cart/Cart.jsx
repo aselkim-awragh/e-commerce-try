@@ -8,7 +8,7 @@ function Cart() {
   const getCart = async () => {
     try {
       console.log("fetching data");
-      const response = await fetch("http://localhost:8080/api/v1/cart", {
+      const response = await fetch("/api/v1/cart", {
         method: "GET",
         headers: {
           Authorization: `Bearer : ${token}`,

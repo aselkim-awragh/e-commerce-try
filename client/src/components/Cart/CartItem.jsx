@@ -5,16 +5,13 @@ function CartItem({ item }) {
   const [loading, setLoading] = useState(true);
   const getItem = async () => {
     console.log(item);
-    const response = await fetch(
-      `http://localhost:8080/api/v1/products/${item.productId}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: "Bearer : token",
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`api/v1/products/${item.productId}`, {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer : token",
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     setProduct(() => data.product);
 
